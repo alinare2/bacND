@@ -10,8 +10,8 @@ function Home(){
 
 		// REPLACE WITH CODE THAT GETS USER_ID FROM SESSION!!
 		//const parameters = {params: {user_id: 1}};
-		const user_id = 1;
-		Axios.get(`http://localhost:5000/api/getConsumes/${user_id}`).then((response) =>{
+		const user_id = 14;
+		Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getConsumes.php?user_id=${user_id}`).then((response) =>{
 			const res = response.data;
 			if(res.length <= 0 ){
 				// Put a thing here saying "You haven't had anything to drink!"

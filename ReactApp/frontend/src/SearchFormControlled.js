@@ -9,7 +9,7 @@ function SearchFormControlled(){
 	const [result, updateResult] = useState();
 	const [resultVisual, updateResultVisual] = useState({display: "none"});
 	const [drink, updateDrink] = useState(-1);
-	const user = 1;
+	const user = 14;
 	const history = useNavigate();
 
 	function handleSubmitClick(e){
@@ -18,7 +18,7 @@ function SearchFormControlled(){
 		if(drink >= 0){
 			const request = {drink_id: drink,
 					user_id: user};
-			Axios.post(`http://localhost:5000/api/post/`, request).then((response) =>{
+			Axios.post(`http://db8.cse.nd.edu/cse30246/bacND/server/postConsumes.php`, request).then((response) =>{
 				console.log(response);
 			}).catch((error) =>{
 				console.log(error);
@@ -49,7 +49,7 @@ function SearchFormControlled(){
 			return 
 		}
 		else{
-			Axios.get(`http://localhost:5000/api/getDrink/${str}`).then((response) => {
+			Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getDrink.php?drink_name=${str}`).then((response) => {
 				if(response.data.length > 0){
 					let res = response.data.map((value) => {
 						return (
