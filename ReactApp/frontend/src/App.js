@@ -1,4 +1,4 @@
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, NavLink} from 'react-router-dom';
 
 import './App.css';
 import SearchFormControlled from './SearchFormControlled';
@@ -12,6 +12,13 @@ function App() {
 		<div className='App'>
 			<header className='App-header'>	
 			<h1> bacND </h1>
+			<meta charSet='utf-8'></meta>
+			<div className='nav' id='navbar'>
+				<h3><NavLink to='/home'> Home &#127968; </NavLink></h3>
+				<h3><NavLink to='profile'> My Profile </NavLink></h3>
+				<h3><NavLink to='consume'> CONSUME </NavLink> </h3>
+				<h3><NavLink to='friends'> Frend &#128578;</NavLink></h3>
+			</div>
 			</header>
 			<Routes>
 				<Route path="/" element={<Landing/>}/>
