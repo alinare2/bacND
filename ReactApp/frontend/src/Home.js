@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import Axios from 'axios';
-
+import {useAuth} from './AuthContext';
 
 
 function Home(){
 	const [userConsumes, updateUserConsumes] = useState("");	
-
+	const {currentUser} = useAuth();
+	
 	useEffect(() =>{
-
 		// REPLACE WITH CODE THAT GETS USER_ID FROM SESSION!!
 		//const parameters = {params: {user_id: 1}};
-		const user_id = 14;
+		const user_id = currentUser;
+		console.log(user_id);
 		Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getConsumes.php?user_id=${user_id}`).then((response) =>{
 			const res = response.data;
 			if(res.length <= 0 ){
@@ -32,7 +33,7 @@ function Home(){
 		}).catch((err) =>{
 			console.log(err);
 		});
-	}, []);
+	}, [currentUser]);
 
 
 
