@@ -9,6 +9,7 @@ export function useAuth() {
 export default function AuthProvider({children}){
         const [currentUser, setCurrentUser] = useState(-1);
         const [isLoggedIn, setIsLoggedIn] = useState(false);
+        
 
         function signup(accountDetails){
             // Signup here
@@ -26,19 +27,21 @@ export default function AuthProvider({children}){
             const request = {'username': username, 'password': password};
             Axios.post("http://db8.cse.nd.edu/cse30246/bacND/server/postLogin.php", request).then((response) =>{
                 console.log(response.data);
+                sessionStorage.setItem("userId", response.data);
+                sessionStorage.setItem("isLoggedIn", true);
                 setCurrentUser(response.data);
-                setIsLoggedIn(true);
-                return(response.data);
-            
+                setIsLoggedIn(true); 
             }).catch((error) => {
                 console.log(error);
             })
         }
 
         function logout(){
-                setCurrentUser(-1);
-                setIsLoggedIn(false);
-        } 
+            sessionStorage.setItem("userId", -1);
+            sessionStorage.setItem("isLoggedIn", false);
+            setCurrentUser(-1);
+            setIsLoggedIn(-1);
+        }  
 
         const value = {
             currentUser,

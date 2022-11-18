@@ -9,6 +9,7 @@ export default function Signup(){
                                                         height_inch: "", weight: "", sex: ""});
 
     function handleOnChange(e){
+        console.log(sessionStorage.getItem('userId'));
         let val = e.target.value;
         // Check which text field is being updated and update each value accordingly         
         switch(e.target.id){

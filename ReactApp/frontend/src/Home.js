@@ -10,8 +10,7 @@ function Home(){
 	useEffect(() =>{
 		// REPLACE WITH CODE THAT GETS USER_ID FROM SESSION!!
 		//const parameters = {params: {user_id: 1}};
-		const user_id = currentUser;
-		console.log(user_id);
+		const user_id = sessionStorage.getItem("userId");
 		Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getConsumes.php?user_id=${user_id}`).then((response) =>{
 			const res = response.data;
 			if(res.length <= 0 ){
@@ -24,7 +23,7 @@ function Home(){
 				const newConsumes = res.map((value) =>{
 					return (<p key={value.time}> You drank {value.product_name} at {value.time}! </p>);
 				});
-
+				newConsumes.reverse();
 				
 				updateUserConsumes(newConsumes);
 			}

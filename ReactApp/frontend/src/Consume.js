@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import Axios from 'axios';
 
+import {useAuth} from './AuthContext';
+
 function SearchFormControlled(){
 
 
@@ -9,7 +11,8 @@ function SearchFormControlled(){
 	const [result, updateResult] = useState();
 	const [resultVisual, updateResultVisual] = useState({display: "none"});
 	const [drink, updateDrink] = useState(-1);
-	const user = 14;
+	const {currentUser} = useAuth();
+
 	const history = useNavigate();
 
 	function handleSubmitClick(e){
@@ -17,13 +20,13 @@ function SearchFormControlled(){
 		// If drink < 0 then it has not been selected yet, so it should not be fucked with
 		if(drink >= 0){
 			const request = {drink_id: drink,
-					user_id: user};
+					user_id: currentUser};
 			Axios.post(`http://db8.cse.nd.edu/cse30246/bacND/server/postConsumes.php`, request).then((response) =>{
 				console.log(response);
+				history('/');
 			}).catch((error) =>{
 				console.log(error);
 			});
-			history('/home')
 		}
 	}
 
