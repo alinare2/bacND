@@ -16,9 +16,13 @@ export default function Consume(){
     const [searchTimer, setSearchTimer] = useState(null);
     const [drink, setDrink] = useState(-1);
 
+
+    const temp_volume = 354.882; // This is 12 oz or 354.882 mL
+    const temp_container = "12oz can"; // This can be shot, 12 oz, 16 oz, 24 oz, 32 oz, solo cup, etc. 
+
     function handleSubmit(){
         console.log(drink);
-        const request = {drink_id : drink, user_id : currentUser};
+        const request = {drink_id : drink, user_id : currentUser, volume: temp_volume, container: temp_container};
         if(drink > 0){
             Axios.post("http://db8.cse.nd.edu/cse30246/bacND/server/postConsumes.php", request).then((response)=>{
                 console.log(response.data);

@@ -31,9 +31,9 @@ export default function Feed(){
             <FlatList
                 data={consumes}
                 renderItem={({item}) =>(
-                    <Text>You drank {item.product_name} at {item.time}</Text>
+                    <Text>You had a {item.container} of {item.product_name} at {item.time}</Text>
                 )}
-                keyExtractor={(item) => item.time}
+                keyExtractor={(item) => {return item.consumes_id}}
                 style={{flexGrow:0}}
             />
         </View>

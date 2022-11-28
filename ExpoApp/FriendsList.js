@@ -32,13 +32,13 @@ export default function FriendsList(){
             <FlatList
                 data={friends}
                 renderItem={({item})=> (
-                    <TouchableHighlight>
-                    <Link to={`/profile/${item.friend_id}`}>
-                        <Text key={`${item.friend_id}`}> · {item.alias}</Text>
-                    </Link>
+                    <TouchableHighlight >
+                        <Link to={`/profile/${item.friend_id}`}>
+                            <Text > · {item.alias}</Text>
+                        </Link>
                     </TouchableHighlight>
                 )}
-                keyExtractor={(item) => {`${item.friend_id}`}}
+                keyExtractor={(item) => {return `${item.friend_id}`}}
                 style={{flexGrow:0}}
             />
 
