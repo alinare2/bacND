@@ -1,17 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import Axios from 'axios';
-import { useParams } from 'react-router-native';
+import {Link, useParams } from 'react-router-native';
 
 import {useAuth} from './AuthContext';
 
 export default function Profile(){
     const [userInfo, setUserInfo] = useState({alias: "", firstname: "", lastname: "", age: "", weight: "", height: "", sex: ""});
+    const [editProfile, setEditProfile] = useState(false);
 
     const {user_id} = useParams();
-
+    const {currentUser} = useAuth();
+    
     useEffect(() => {
-        console.log(user_id); 
+        if(currentUser == user_id){
+            setEditProfile(true);
+        }
+        else{
+            setEditProfile(false);
+        }
+
         Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getUser.php?user_id=${user_id}`).then((response)=>{
             setUserInfo(response.data);
         
@@ -36,6 +44,13 @@ export default function Profile(){
                     Height:         {`${Math.floor(userInfo.height/12)}' ${userInfo.height%12}"`}{"\n"}
                     Sex:            {userInfo.sex}{"\n"}
                 </Text>
+                {editProfile && (
+                    <Link to={'../edit_profile'}>
+                        <Text>
+                            Edit Profile
+                        </Text>
+                    </Link>
+                )}
             </View>
         </View>
     )
