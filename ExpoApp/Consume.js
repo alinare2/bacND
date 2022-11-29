@@ -4,6 +4,7 @@ import {View, Text, TextInput, Button, TouchableOpacity, FlatList, ActivityIndic
 import { useNavigate } from 'react-router-native';
 
 import { useAuth } from './AuthContext';
+import styles from './styles';
 
 
 export default function Consume(){
@@ -85,17 +86,17 @@ export default function Consume(){
                 </TouchableOpacity>
             )}
             keyExtractor={(item) => item.drink_id}
-            style={{flexGrow:0}}
+            style={{flexGrow:0, maxHeight:'60%'}}
         />
         );
     }
 
     return(
-        <View>
+        <View style={{alignItems:'center'}}>
             <Text>
                 Consume 😋 {'\n'}
             </Text>
-            <View style={{backgroundColor: "#F0F0F0"}}>
+            <View style={styles.drinkSearch}>
                 <TextInput placeholder="Search for Drink" onChangeText={text => handleOnChangeText(text)} value={currentText}/>
                 {(drink === -1) && thing} 
                 <Text> Insert a dropdown here to choose shot, can, tallboy, solo cup, etc </Text> 

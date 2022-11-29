@@ -1,15 +1,17 @@
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {Link} from 'react-router-native';
 
 import { useAuth } from './AuthContext';
+
 import styles from './styles';
+
 export default function HomeWrapper(){
     const {currentUser} = useAuth()
 
     return(
         <View style={styles.navbarContainer}>
             <Link to = "/" style={styles.navbarLink}>
-                <Text>Home </Text>
+                <Image source={require('./src/bacndlogo.png')} style={styles.logoLink}/>
             </Link>
             <Link to={`/profile/${currentUser}`} style={styles.navbarLink}>
                 <Text>My Profile </Text>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, ScrollView, Text, StyleSheet} from 'react-native';
+import {SafeAreaView, ScrollView, Text, StyleSheet, Image} from 'react-native';
 import {Link, Routes, Route} from 'react-router-native';
 
 
@@ -17,6 +17,7 @@ import Logout from './Logout';
 
 import {useAuth} from './AuthContext';
 
+import styles from './styles';
 
 export default function AppTestThing(){
     const {isLoggedIn, currentUser} = useAuth();
@@ -31,22 +32,22 @@ export default function AppTestThing(){
     }
     return (
         <SafeAreaView style={styles.container}>
-
             {currentPage.wrap}
-        <Routes>
-            <Route path="/" element={currentPage.root}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/signup" element={<Signup/>}/>
-            <Route path="/profile/:user_id" element={<Profile/>}/>
-            <Route path="/consume" element={<Consume/>}/>
-            <Route path="/friends" element={<FriendsList/>}/>
-            <Route path="/logout" element={<Logout/>}/>
-        </Routes>
+            <Routes>
+                <Route path="/" element={currentPage.root}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/signup" element={<Signup/>}/>
+                <Route path="/profile/:user_id" element={<Profile/>}/>
+                <Route path="/consume" element={<Consume/>}/>
+                <Route path="/friends" element={<FriendsList/>}/>
+                <Route path="/logout" element={<Logout/>}/>
+            </Routes>
       </SafeAreaView>
     );
  
 }
 
+/*
 
 const styles = StyleSheet.create({
   container: {
@@ -54,4 +55,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-}});
+}});*/

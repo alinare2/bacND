@@ -1,4 +1,4 @@
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import { useAuth} from './AuthContext';
 
 import Feed from './Feed';
@@ -9,6 +9,7 @@ export default function Home(){
     const {currentUser} = useAuth();
     return(
         <View style={{alignItems:'center'}}>
+            
             <Text> Home user: {currentUser}</Text>
             <BloodAlcohol/>
             <Feed/>

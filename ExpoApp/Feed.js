@@ -13,7 +13,6 @@ export default function Feed(){
 
         // Probably need to do some checks here
         Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getConsumes.php?user_id=${currentUser}`).then((response) => {
-
             setConsumes(response.data);
 
         }).catch((error)=>{
