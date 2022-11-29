@@ -17,7 +17,7 @@ export default function Feed(){
             setConsumes(response.data);
 
         }).catch((error)=>{
-
+            console.log(error);
         });
 
     }, []);
@@ -25,9 +25,7 @@ export default function Feed(){
 
     return(
         <View>
-            <Text>
-                Your drinks go here!
-            </Text>
+           
             <FlatList
                 data={consumes}
                 renderItem={({item}) =>(
@@ -35,6 +33,7 @@ export default function Feed(){
                 )}
                 keyExtractor={(item) => {return item.consumes_id}}
                 style={{flexGrow:0}}
+                ListEmptyComponent={<Text> You haven't had anything to drink today </Text>}
             />
         </View>
     );

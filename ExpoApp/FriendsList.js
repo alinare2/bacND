@@ -32,9 +32,9 @@ export default function FriendsList(){
             <FlatList
                 data={friends}
                 renderItem={({item})=> (
-                    <TouchableHighlight >
+                    <TouchableHighlight>
                         <Link to={`/profile/${item.friend_id}`}>
-                            <Text > · {item.alias}</Text>
+                            <Text> · {item.alias}</Text>
                         </Link>
                     </TouchableHighlight>
                 )}

@@ -7,9 +7,17 @@ import {useAuth} from './AuthContext';
 export default function BloodAlcohol(){
     const {currentUser} = useAuth();
 
+    const [bac, setBAC] = useState(0);
+
     useEffect(()=>{
         // Probably check something here maybe? 
-        
+        Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getBAC.php?user_id=${currentUser}`)
+        .then((response) =>{
+            setBAC(response.data.toFixed(2))
+
+        }).catch((error) => {
+            console.log(error);
+        });
 
 
     }, []);
@@ -17,7 +25,8 @@ export default function BloodAlcohol(){
 
     return (
         <View>
-            <Text> You are fucking WASTED BUDDY </Text>
+            <Text> Your BAC is approximately {bac}%</Text>
+            <Text> Insert something here about your levels (e.g tipsy, drunk, don't drive, drink some water, etc.) </Text>
         </View>
     );
 }
