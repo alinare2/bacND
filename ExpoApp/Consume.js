@@ -21,7 +21,21 @@ export default function Consume(){
     const temp_volume = 354.882; // This is 12 oz or 354.882 mL
     const temp_container = "12oz can"; // This can be shot, 12 oz, 16 oz, 24 oz, 32 oz, solo cup, etc. 
 
-    function handleSubmit(){
+    function handleDropSubmit(){
+        console.log(drink);
+        const request = {drink_id : drink, user_id : currentUser, volume: temp_volume, container: temp_container};
+        if(drink > 0){
+            Axios.post("http://db8.cse.nd.edu/cse30246/bacND/server/postConsumes.php", request).then((response)=>{
+                console.log(response.data);
+
+                nav("/");
+            }).catch((error)=>{
+                console.log(error);
+            });
+        }
+    }
+
+    function handleManualSubmit(){
         console.log(drink);
         const request = {drink_id : drink, user_id : currentUser, volume: temp_volume, container: temp_container};
         if(drink > 0){
@@ -94,14 +108,28 @@ export default function Consume(){
     return(
         <View style={{alignItems:'center'}}>
             <Text>
-                Consume 😋 {'\n'}
+                <Text style={{fontSize:45, color:'white', fontWeight:'bold', backgroundColor: '#5C9EAD', padding:500}}>
+                ----- consume -----
+    
+                </Text>
             </Text>
+            <Text style={{fontSize:20, color:'white', fontWeight:'bold'}}> 
+                Search for drink
+            </Text> 
             <View style={styles.drinkSearch}>
                 <TextInput placeholder="Search for Drink" onChangeText={text => handleOnChangeText(text)} value={currentText}/>
                 {(drink === -1) && thing} 
-                <Text> Insert a dropdown here to choose shot, can, tallboy, solo cup, etc </Text> 
-                <Button title="Consume" onPress={handleSubmit}/>
+                <Text> Insert input to select volumes (in ounces) of drink </Text> 
+                <Button title="Consume" onPress={handleDropSubmit}/>
             </View>
+
+            <Text style={{fontSize:20, color:'white', fontWeight:'bold'}}> 
+                Can't find it? Add it below!
+            </Text> 
+            <TextInput placeholder="Drink Name" onChangeText={text => setDrink(text)} value={drink}/>
+
+            <Button title="Submit" onPress={handleManualSubmit}/>
+
         </View>
-    )
+    );
 }

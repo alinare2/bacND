@@ -41,7 +41,7 @@ export default function Login(){
 
     return(
         <>
-            <View style={{backgroundColor: '#F0F0F0'}} >
+            <View style={{backgroundColor: '#EEEEEE'}} >
                 <TextInput onChangeText={text => setUsername(text)} value={username} placeholder="Username"/>
                 <TextInput onChangeText={text => setPassword(text)} value={password} placeholder="Password" secureTextEntry={true}/>
                 <Button onPress={handleOnPress} title="Log In"/>

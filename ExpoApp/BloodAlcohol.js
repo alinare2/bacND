@@ -13,7 +13,7 @@ export default function BloodAlcohol(){
         // Probably check something here maybe? 
         Axios.get(`http://db8.cse.nd.edu/cse30246/bacND/server/getBAC.php?user_id=${currentUser}`)
         .then((response) =>{
-            setBAC(response.data.toFixed(2))
+            setBAC(Number(response.data.toFixed(2)))
 
         }).catch((error) => {
             console.log(error);

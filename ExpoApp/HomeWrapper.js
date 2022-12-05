@@ -9,22 +9,22 @@ export default function HomeWrapper(){
     const {currentUser} = useAuth()
 
     return(
-        <View style={styles.navbarContainer}>
-            <Link to = "/" style={styles.navbarLink}>
-                <Image source={require('./src/bacndlogo.png')} style={styles.logoLink}/>
-            </Link>
-            <Link to={`/profile/${currentUser}`} style={styles.navbarLink}>
-                <Text>My Profile </Text>
-            </Link>
-            <Link to="/consume" style={styles.navbarLink}>
-                <Text>CONSUME 😋 </Text>
-            </Link>
-            <Link to ="/friends" style={styles.navbarLink}>
-                <Text>Fren 🙂</Text>
-            </Link>
-            <Link to="/logout" style={styles.navbarLink}>
-                <Text>Log out</Text>                
-            </Link>
-        </View>
+            <View style={styles.navbarContainer}>
+                <Link to = "/" style={styles.navbarLink}>
+                    <Image source={require('./src/bacndlogo.png')} style={styles.logoLink}/>
+                </Link>
+                <Link to={`/profile/${currentUser}`} style={styles.navbarLink}>
+                    <Text>My Profile </Text>
+                </Link>
+                <Link to="/consume" style={styles.navbarLink}>
+                    <Text>Consume  </Text>
+                </Link>
+                <Link to ="/friends" style={styles.navbarLink}>
+                    <Text>Friends 🙂</Text>
+                </Link>
+                <Link to="/logout" style={styles.navbarLink}>
+                    <Text>Log Out</Text>                
+                </Link>
+            </View>
     );
 }
