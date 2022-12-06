@@ -9,7 +9,7 @@ import { useAuth } from './AuthContext';
 export default function FriendsList(){
     const {currentUser} = useAuth();
     const [friends, setFriends] = useState();
-
+    const [rerender, setRerender] = useState();
 
     useEffect(()=>{
         // Probably need to do some checks or something idk
@@ -19,7 +19,7 @@ export default function FriendsList(){
             console.log(error);
         });
 
-    }, []);
+    }, [setRerender]);
 
     // Maybe turn each element in the list to a touchable that links to their profile with their user_id
 
@@ -42,7 +42,7 @@ export default function FriendsList(){
                 style={{flexGrow:0}}
             />
 
-            <FriendSearch/>
+            <FriendSearch dummy={rerender} handleUpdate={setRerender}/>
         </View>
     );
 }

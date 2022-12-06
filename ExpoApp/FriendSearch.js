@@ -6,7 +6,7 @@ import Axios from 'axios';
 
 import {useAuth} from './AuthContext';
 
-export default function FriendSearch(){
+export default function FriendSearch({dummy, handleUpdate}){
 
     const {currentUser} = useAuth();
     
@@ -22,10 +22,13 @@ export default function FriendSearch(){
         let payload={'user1': currentUser, 'user2': newFriend};
         Axios.post(`http://db8.cse.nd.edu/cse30246/bacND/server/postAddFriend.php`, payload)
         .then((response) => {
-
+            console.log(response.data);
+            setSearchText();
+            setSearchResults();
+            handleUpdate(-1*dummy);
         })
         .catch((error) => {
-
+            console.log(error);
         });
     }
 
