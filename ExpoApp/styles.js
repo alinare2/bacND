@@ -38,9 +38,17 @@ const styles = StyleSheet.create({
     },
     
     navText: {
-        fontSize: 30,
-        paddingTop: 1
-    }
+        fontSize:30, 
+        fontWeight:'bold', 
+        color:'#124263'
+    },
+
+    formInput: {
+        fontSize:20, 
+        backgroundColor:'white', 
+        padding:5, 
+        margin: 10
+    },
 
 
 });

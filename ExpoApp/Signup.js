@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { useNavigate } from 'react-router-native';
 
 import {useAuth} from './AuthContext';
+import styles from './styles';
 
 
 export default function Signup(){
@@ -46,64 +47,77 @@ export default function Signup(){
 
 
     return(
-        <View style={{backgroundColor: '#EEEEEE'}} >
-            <TextInput 
-                placeholder="Username" 
-                onChangeText={text => setAccountDetails({...accountDetails, alias: text})} 
-                value={accountDetails.alias}
-            />
-            <TextInput 
-                placeholder="Password" 
-                onChangeText={text => setAccountDetails({...accountDetails, password: text})} 
-                value={accountDetails.password}
-                secureTextEntry={true}
-            />
-            <TextInput 
-                placeholder='Confirm Password' 
-                onChangeText={text=>setAccountDetails({...accountDetails, confirm_password: text})} 
-                value={accountDetails.confirm_password}
-                secureTextEntry={true}
-            />
-            <TextInput 
-                placeholder='First Name' 
-                onChangeText={text=>setAccountDetails({...accountDetails, firstname: text})} 
-                value={accountDetails.firstname} 
-            />
-            <TextInput 
-                placeholder='Last Name' 
-                onChangeText={text=>setAccountDetails({...accountDetails, lastname: text})} 
-                value={accountDetails.lastname} 
-            />
-            <TextInput 
-                placeholder='Age'
-                onChangeText={text=>setAccountDetails({...accountDetails, age: text})} 
-                value={accountDetails.age}
-                keyboardType="numeric"
-            />
-            <TextInput 
-                placeholder='Height (ft)' 
-                onChangeText={text=>setAccountDetails({...accountDetails, height_feet: text })} 
-                value={accountDetails.feet}
-                keyboardType="numeric"
-            /> 
-            <TextInput 
-                placeholder='Height (inch)' 
-                onChangeText={text =>setAccountDetails({...accountDetails, height_inch:text})} 
-                value={accountDetails.inch}
-                keyboardType="numeric"
-            />
-            <TextInput 
-                placeholder='Weight (lbs)' 
-                onChangeText={text=>setAccountDetails({...accountDetails, weight: text})} 
-                value={accountDetails.weight} 
-                keyboardType="numeric"
-            />
-            {/* <Text> Find somethign for a radio button for sex</Text> */}
-            <TextInput 
-                placeholder='Gender (M/F)' 
-                onChangeText={text=>setAccountDetails({...accountDetails, sex: text})} 
-                value={accountDetails.sex} 
-            /> 
+        <View style={{backgroundColor: '#EEEEEE', padding:0, margin: 20, width:300}} >
+            <View style={{backgroundColor: "#DDDDDD"}}>
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder="Username" 
+                    onChangeText={text => setAccountDetails({...accountDetails, alias: text})} 
+                    autoCapitalize='none'
+                    value={accountDetails.alias}
+                />
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder="Password" 
+                    onChangeText={text => setAccountDetails({...accountDetails, password: text})} 
+                    value={accountDetails.password}
+                    secureTextEntry={true}
+                />
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='Confirm Password' 
+                    onChangeText={text=>setAccountDetails({...accountDetails, confirm_password: text})} 
+                    value={accountDetails.confirm_password}
+                    secureTextEntry={true}
+                />
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='First Name' 
+                    onChangeText={text=>setAccountDetails({...accountDetails, firstname: text})} 
+                    value={accountDetails.firstname} 
+                />
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='Last Name' 
+                    onChangeText={text=>setAccountDetails({...accountDetails, lastname: text})} 
+                    value={accountDetails.lastname} 
+                />
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='Age'
+                    onChangeText={text=>setAccountDetails({...accountDetails, age: text})} 
+                    value={accountDetails.age}
+                    keyboardType="numeric"
+                />
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='Height (ft)' 
+                    onChangeText={text=>setAccountDetails({...accountDetails, height_feet: text })} 
+                    value={accountDetails.feet}
+                    keyboardType="numeric"
+                /> 
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='Height (inch)' 
+                    onChangeText={text =>setAccountDetails({...accountDetails, height_inch:text})} 
+                    value={accountDetails.inch}
+                    keyboardType="numeric"
+                />
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='Weight (lbs)' 
+                    onChangeText={text=>setAccountDetails({...accountDetails, weight: text})} 
+                    value={accountDetails.weight} 
+                    keyboardType="numeric"
+                />
+                {/* <Text> Find somethign for a radio button for sex</Text> */}
+                <TextInput 
+                    style={styles.formInput}
+                    placeholder='Gender (M/F)' 
+                    onChangeText={text=>setAccountDetails({...accountDetails, sex: text})} 
+                    value={accountDetails.sex} 
+                /> 
+            </View>
             <Button 
                 title="Sign up!" 
                 onPress={handleOnPress}
