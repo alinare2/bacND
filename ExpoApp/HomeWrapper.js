@@ -23,7 +23,7 @@ export default function HomeWrapper(){
                 </Link>
                 <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>|</Text>
                 <Link to ="/friends" style={styles.navbarLink}>
-                    <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>Friends 🙂</Text>
+                    <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>Friends</Text>
                 </Link>
                 <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>|</Text>
                 <Link to="/logout" style={styles.navbarLink}>
