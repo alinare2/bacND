@@ -16,6 +16,7 @@ export default function LandingWrapper(){
                     <Link to="/login" style={styles.navbarLink}>
                         <Text style={styles.navText}> Login </Text>
                     </Link>
+                    <Text style={{fontSize:30, fontWeight:'bold', color:'#124263'}}>|</Text>
                     <Link to="/signup" style={styles.navbarLink}>
                     <Text style={styles.navText}> Signup </Text>
                     </Link>
