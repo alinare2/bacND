@@ -38,10 +38,49 @@ const styles = StyleSheet.create({
     },
     
     navText: {
-        fontSize:30, 
-        fontWeight:'bold', 
-        color:'#124263'
+        fontSize: 30,
+        paddingTop: 1
     },
+
+    bigText: {fontSize: 40,
+              fontWeight: "bold", 
+              color: 'white',
+              alignSelf: 'center', 
+              backgroundColor: '#5C9EAD',
+              borderRadius: 7,
+              borderWidth: 5,
+              borderColor: '#fff'
+            },
+
+    bacLevels: {
+        fontSize: 10,
+        fontWeight: 'bold',
+        color: 'white',
+        paddingLeft:2,
+        paddingTop: 3,
+        alignSelf: 'left',
+        paddingRight: 2
+    },
+
+    subtext: {
+        fontSize: 8,
+        color: 'white',      
+        paddingLeft:2,
+        paddingTop: 3,
+        alignSelf: 'left',
+        paddingRight: 2
+    
+    },
+    statement: {
+        fontSize: 12,
+        color: 'white',      
+        paddingLeft:2,
+        paddingBottom: 3,
+        alignSelf: 'center',
+        paddingRight: 2
+    
+    },
+
 
     formInput: {
         fontSize:14, 
