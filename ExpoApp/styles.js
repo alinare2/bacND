@@ -53,11 +53,23 @@ const styles = StyleSheet.create({
             },
 
     bacLevels: {
-        fontSize: 15,
+        fontSize: 10,
         fontWeight: 'bold',
-        fontColor: 'white',
-        paddingLeft: 10,
-        paddingRight: 10
+        color: 'white',
+        paddingLeft:2,
+        paddingTop: 3,
+        alignSelf: 'left',
+        paddingRight: 2
+    },
+
+    subtext: {
+        fontSize: 8,
+        color: 'white',      
+        paddingLeft:2,
+        paddingTop: 3,
+        alignSelf: 'left',
+        paddingRight: 2
+    
     }
 
 
