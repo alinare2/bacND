@@ -9,10 +9,14 @@ export default function HomeWrapper(){
     const {currentUser} = useAuth()
 
     return(
+        <View style={styles.container}>
+            <Link to="/" style={styles.bigLogo}>
+                <Image source={require('./src/bacndlogo-2.png')} style={styles.logoLink}/>
+            </Link>
             <View style={styles.navbarContainer}>
-                <Link to = "/" style={styles.navbarLink}>
+                {/* <Link to = "/" style={styles.navbarLink}>
                     <Image source={require('./src/bacndlogo.png')} style={styles.logoLink}/>
-                </Link>
+                </Link> */}
                 <Link to={`/profile/${currentUser}`} style={styles.navbarLink}>
                     <Text>My Profile </Text>
                 </Link>
@@ -25,6 +29,7 @@ export default function HomeWrapper(){
                 <Link to="/logout" style={styles.navbarLink}>
                     <Text>Log Out</Text>                
                 </Link>
+            </View>
             </View>
     );
 }

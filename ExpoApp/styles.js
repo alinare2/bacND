@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
    
     container: {
-        backgroundColor: '#5C9EAD',
+        backgroundColor: '#326273',
         alignItems: 'center',
         justifyContent: 'center',
     }, 
@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
         paddingTop: 40, 
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        backgroundColor: '#326273'
+        backgroundColor: '#5C9EAD'
     },
 
     navbarLink: {
         flex: 1,
-        alignItems: "center"
+        alignItems: "center",
     },
 
     logoLink: {
@@ -29,16 +29,18 @@ const styles = StyleSheet.create({
 
     drinkSearch: {
         width: '90%',
-        backgroundColor:'#5C9EAD'
+        backgroundColor:'#326273'
     },
 
     bigLogo: {
         height: 100,
         width: 'auto',
-        paddingTop: 1,
-        paddingBottom: 1
+    },
+    
+    navText: {
+        fontSize: 30,
+        paddingTop: 1
     }
-
 
 
 });

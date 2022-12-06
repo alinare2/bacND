@@ -14,10 +14,10 @@ export default function LandingWrapper(){
                         <Image source={require('./src/bacndlogo-2.png')} style={styles.logoLink}/>
                     </Link> */}
                     <Link to="/login" style={styles.navbarLink}>
-                        <Text> Login </Text>
+                        <Text style={styles.navText}> Login </Text>
                     </Link>
                     <Link to="/signup" style={styles.navbarLink}>
-                        <Text> Signup </Text>
+                    <Text style={styles.navText}> Signup </Text>
                     </Link>
                 </View>
         </View>
