@@ -20,7 +20,7 @@ export default function FriendsList(){
             console.log(error);
         });
 
-    }, [setRerender]);
+    }, [rerender]);
 
     // Maybe turn each element in the list to a touchable that links to their profile with their user_id
 
