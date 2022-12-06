@@ -70,6 +70,15 @@ const styles = StyleSheet.create({
         alignSelf: 'left',
         paddingRight: 2
     
+    },
+    statement: {
+        fontSize: 12,
+        color: 'white',      
+        paddingLeft:2,
+        paddingBottom: 3,
+        alignSelf: 'center',
+        paddingRight: 2
+    
     }
 
 

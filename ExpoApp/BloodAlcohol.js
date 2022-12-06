@@ -26,7 +26,7 @@ export default function BloodAlcohol(){
 
     return (
         <View>
-            <Text style={styles.bacLevels}> Your BAC is approximately </Text>
+            <Text style={styles.statement}> Your BAC is approximately </Text>
             <Text style={styles.bigText}> {bac}%</Text>
             <Text style={styles.bacLevels}> 0% - 0.05% </Text>
             <Text style={styles.subtext}> Slight buzz, but typically no observable effects </Text>
