@@ -83,13 +83,13 @@ const styles = StyleSheet.create({
 
 
     formInput: {
-        fontSize:14, 
+        fontSize:18, 
         backgroundColor:'white', 
         padding:5, 
-        marginRight: 50,
-        marginLeft: 50,
         marginTop: 5,
-        marginBottom: 5
+        marginBottom: 5,
+        marginLeft: 20,
+        marginRight: 20
     },
 
 

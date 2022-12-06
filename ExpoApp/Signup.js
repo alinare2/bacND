@@ -55,8 +55,8 @@ export default function Signup(){
 
     return(
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-            <View style={{backgroundColor: '#EEEEEE', padding:0, margin: 20, width:350}}>
-                <ScrollView style={{backgroundColor: "#DDDDDD", paddingTop:20, height:250}} contentContainerStyle={{flexGrow:100}}>
+            <View style={{backgroundColor: '#EEEEEE', padding:0, margin: 20, width:300}}>
+                <ScrollView style={{backgroundColor: "#DDDDDD", height:250}} contentContainerStyle={{flexGrow:100}}>
                     <View style={{height:500}}>
                         <TextInput 
                             style={styles.formInput}
