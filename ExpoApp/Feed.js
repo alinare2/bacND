@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import Axios from 'axios';
-import TextTicker from 'react-native-text-ticker';
-import MarqueeText from 'react-native-marquee';
 
 import {useAuth} from './AuthContext';
 
