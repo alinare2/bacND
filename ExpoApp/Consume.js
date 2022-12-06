@@ -122,11 +122,11 @@ export default function Consume(){
                 </Text>
             </Text>
             <View style={styles.drinkSearch}>
-                <TextInput style={{fontSize:20, backgroundColor:'white', padding:3, margin: 3}} placeholder="Search for Drink" onChangeText={text => handleOnChangeText(text)} value={currentText}/>
+                <TextInput style={{fontSize:20, backgroundColor:'white', padding:3, margin: 3}} placeholder="Search for a Drink" onChangeText={text => handleOnChangeText(text)} value={currentText}/>
                 {(drink === -1) && thing} 
                 <SelectDropdown
                     buttonStyle={{margin: 5}}
-                    defaultButtonText={"Select a container"}
+                    defaultButtonText={"Select a Container"}
                     data={volumeOps}
                     onSelect={(selectedItem, index) => {
                         setContainerCheck(false);
