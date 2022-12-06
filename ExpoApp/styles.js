@@ -6,11 +6,12 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#326273',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     }, 
     navbarContainer: {
         padding: 10,
-        paddingTop: 40, 
+        paddingTop: 10, 
+        marginTop:10,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         backgroundColor: '#5C9EAD'
@@ -24,7 +25,6 @@ const styles = StyleSheet.create({
     logoLink: {
         flex: 1,
         resizeMode: 'contain'
-
     },
 
     drinkSearch: {

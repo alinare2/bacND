@@ -14,20 +14,20 @@ export default function HomeWrapper(){
                 <Image source={require('./src/bacndlogo-2.png')} style={styles.logoLink}/>
             </Link>
             <View style={styles.navbarContainer}>
-                {/* <Link to = "/" style={styles.navbarLink}>
-                    <Image source={require('./src/bacndlogo.png')} style={styles.logoLink}/>
-                </Link> */}
                 <Link to={`/profile/${currentUser}`} style={styles.navbarLink}>
-                    <Text>My Profile </Text>
+                    <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}} >My Profile</Text>
                 </Link>
+                <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>|</Text>
                 <Link to="/consume" style={styles.navbarLink}>
-                    <Text>Consume  </Text>
+                    <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>Consume</Text>
                 </Link>
+                <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>|</Text>
                 <Link to ="/friends" style={styles.navbarLink}>
-                    <Text>Friends 🙂</Text>
+                    <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>Friends 🙂</Text>
                 </Link>
+                <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>|</Text>
                 <Link to="/logout" style={styles.navbarLink}>
-                    <Text>Log Out</Text>                
+                    <Text style={{fontSize:16, fontWeight:'bold', color:'#124263'}}>Log Out</Text>                
                 </Link>
             </View>
             </View>
