@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import {View, Text, Button, MaskedViewBase} from 'react-native';
+import {View, Text, Button, MaskedViewBase, Pressable} from 'react-native';
 import Axios from 'axios';
 import {Link, redirect} from 'react-router-native';
 
 import { useAuth } from './AuthContext';
+import styles from './styles.js';
 
 export default function DeleteProfile(){
 
@@ -27,11 +28,13 @@ export default function DeleteProfile(){
     }
 
     return (
-        <View>
+        <View style={{backgroundColor: "#5C9EAD", width: 250, margin: 15, padding: 10, borderRadius:15}}>
             <Text> Are you sure you want to delete your account?</Text>
-            <Button title="Yes" onPress={handleDelete}/>
+            <Pressable  onPressIn={handleDelete}>
+                <Text style={styles.profileLink}> Yes </Text>
+            </Pressable>            
             <Link to="/"> 
-                <Text> Oh no. No, no, no, no, no, no, no! Wait, wait, wait, wait, hey. Wait, wait, wait, wait!</Text>
+                <Text style={{...styles.profileLink, backgroundColor:'#AA0000', color:'black'}}> No </Text>
             </Link>
         </View>
     );

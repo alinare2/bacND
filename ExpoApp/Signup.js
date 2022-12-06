@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { View, Text, TextInput, Button, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-native';
-import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
+import RadioForm from 'react-native-simple-radio-button';
 import { Keyboard } from 'react-native';
 
 import {useAuth} from './AuthContext';
@@ -15,7 +15,7 @@ export default function Signup(){
     const [accountDetails, setAccountDetails] = useState({alias: "", password: "", confirm_password: "",
                                                         firstname: "", lastname: "", 
                                                         age: "", height_feet: "", height_inch: "", 
-                                                        weight: "", sex: ""});
+                                                        weight: "", sex: "M"});
 
     var radio_props = [
         {label: 'Male', value: 'M' },
@@ -24,9 +24,6 @@ export default function Signup(){
 
     function handleOnPress(e){
         e.preventDefault();
-
-        // Placeholder for now until I find a way to make radio buttons
-        //setAccountDetails({...accountDetails, sex: "F"});
     
         // Check for any empty stuff here please
         if(Object.values(accountDetails).reduce((acc, value) => {return (value === "") || acc}, false)){
@@ -55,9 +52,9 @@ export default function Signup(){
 
     return(
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-            <View style={{backgroundColor: '#EEEEEE', padding:0, margin: 20, width:300}}>
+            <ScrollView style={{backgroundColor: '#EEEEEE', padding:0, margin: 20, width:300}}>
                 <ScrollView style={{backgroundColor: "#DDDDDD", height:250}} contentContainerStyle={{flexGrow:100}}>
-                    <View style={{height:500}}>
+                    <ScrollView style={{height:500}}>
                         <TextInput 
                             style={styles.formInput}
                             placeholder="Username" 
@@ -140,13 +137,13 @@ export default function Signup(){
                                 }
                             />
                         </View>
-                    </View>
+                    </ScrollView>
                 </ScrollView>
                 <Button 
                     title="Sign up!" 
                     onPress={handleOnPress}
                 />
-            </View>
+            </ScrollView>
         </TouchableWithoutFeedback>
     );
 }
