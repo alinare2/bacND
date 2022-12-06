@@ -26,7 +26,6 @@ export default function BloodAlcohol(){
 
     return (
         <View>
-            <Text>{"\n"}</Text>
             <Text style={styles.statement}> Time until sober (0% BAC):  </Text> 
             <Text style={styles.bigText}> {time} Hours </Text>
         </View>

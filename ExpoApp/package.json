@@ -14,8 +14,10 @@
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
     "react-native": "0.70.5",
+    "react-native-marquee": "^0.4.0",
     "react-native-select-dropdown": "^3.1.0",
     "react-native-simple-radio-button": "^2.7.4",
+    "react-native-text-ticker": "^1.14.0",
     "react-router-native": "^6.4.3"
   },
   "devDependencies": {

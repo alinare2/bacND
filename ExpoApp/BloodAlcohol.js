@@ -26,18 +26,28 @@ export default function BloodAlcohol(){
 
     return (
         <View>
-            <Text style={styles.statement}> Your BAC is approximately </Text>
-            <Text style={styles.bigText}> {bac}%</Text>
-            <Text style={styles.bacLevels}> 0% - 0.05% </Text>
-            <Text style={styles.subtext}> Slight buzz, but typically no observable effects </Text>
-            <Text style={styles.bacLevels}> 0.05% - 0.08% </Text>
-            <Text style={styles.subtext}> A slight impairment in judgement and coordination </Text>
-            <Text style={styles.bacLevels}> 0.08% - 0.15% </Text>
-            <Text style={styles.subtext}> At legal limit! Proceed with caution as effects become more apparent and mood starts to swing </Text>
-            <Text style={styles.bacLevels}> 0.15% - 0.30% </Text>
-            <Text style={styles.subtext}> Evident loss of motor functions, significant mood change, erratic behaviors, {'\n'} risk of alcohol poisoning  </Text>
-            <Text style={styles.bacLevels}> 0.30% - 0.40% </Text>
-            <Text style={styles.subtext}> Very concerning. Please stop drinking. Risk of unconsciousness/coma/death </Text>
+            <Text style={styles.statement}>Your BAC is approximately</Text>
+            <Text style={styles.bigText}> {bac}% </Text>
+            <View style={{marginLeft:6, marginRight:6, borderStyle:'solid', borderColor:'#AAAAAA', borderWidth:4, padding:4, marginTop:10}}>
+                <Text style={(bac > 0 && bac <= 0.05) ? {...styles.bacLevels, color:'#DD0000'} : styles.bacLevels}>0% - 0.05%</Text>
+                <Text style={styles.subtext}>Slight buzz, but typically no observable effects</Text>
+            </View>
+            <View style={{marginLeft:6, marginRight:6, borderStyle:'solid', borderColor:'#AAAAAA', borderWidth:4, padding:4, borderTopWidth:0}}>
+                <Text style={(bac > 0.05 && bac <= 0.08) ? {...styles.bacLevels, color:'#DD0000'} : styles.bacLevels}>0.05% - 0.08%</Text>
+                <Text style={styles.subtext}>A slight impairment in judgement and coordination</Text>
+            </View>
+            <View style={{marginLeft:6, marginRight:6, borderStyle:'solid', borderColor:'#AAAAAA', borderWidth:4, padding:4, borderTopWidth:0}}>
+                <Text style={(bac > 0.08 && bac <= 0.15) ? {...styles.bacLevels, color:'#DD0000'} : styles.bacLevels}>0.08% - 0.15%</Text>
+                <Text style={styles.subtext}>At legal limit! Proceed with caution as effects become more apparent and mood starts to swing</Text>
+            </View>
+            <View style={{marginLeft:6, marginRight:6, borderStyle:'solid', borderColor:'#AAAAAA', borderWidth:4, padding:4, borderTopWidth:0}}>
+                <Text style={(bac > 0.15 && bac <= 0.30) ? {...styles.bacLevels, color:'#DD0000'} : styles.bacLevels}>0.15% - 0.30%</Text>
+                <Text style={styles.subtext}>Evident loss of motor functions, significant mood change, erratic behaviors, risk of alcohol poisoning </Text>
+            </View>
+            <View style={{marginLeft:6, marginRight:6, borderStyle:'solid', borderColor:'#AAAAAA', borderWidth:4, padding:4, borderTopWidth:0}}>
+                <Text style={(bac > 0.30 && bac <= 0.40) ? {...styles.bacLevels, color:'#DD0000'} : styles.bacLevels}>0.30% - 0.40%</Text>
+                <Text style={styles.subtext}>Very concerning. Please stop drinking. Risk of unconsciousness/coma/death</Text>
+            </View>
         </View>
     );
 }

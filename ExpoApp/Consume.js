@@ -117,7 +117,7 @@ export default function Consume(){
     return(
         <View style={{alignItems:'center'}}>
             <Text>
-                <Text style={{fontSize:45, color:'white', fontWeight:'bold', padding:500}}>
+                <Text style={{fontSize:45, color:'white', fontWeight:'bold'}}>
                 Consume a Drink
                 </Text>
             </Text>
