@@ -92,6 +92,38 @@ const styles = StyleSheet.create({
         marginRight: 20
     },
 
+    profileRow: {
+        flexDirection:'row',
+        justifyContent:'space-between'
+
+    },
+
+    profileTextLeft: {
+        textAlign:'left',
+        fontSize:18,
+        fontWeight:'600',
+        marginLeft:10
+    },
+
+    profileTextRight: {
+        textAlign:'right',
+        fontSize:18,
+        marginRight:10
+    },
+
+    profileLink: {
+        textAlign:'center',
+        backgroundColor: '#124263',
+        color:'#7CBECD',
+        fontSize: 22,
+        marginLeft: 40,
+        marginRight: 40,
+        marginTop:5,
+        marginBottom:5,
+        padding:10,
+        borderRadius: 25
+    }
+
 
 });
 

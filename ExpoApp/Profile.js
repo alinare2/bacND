@@ -4,6 +4,7 @@ import Axios from 'axios';
 import {Link, useParams } from 'react-router-native';
 
 import {useAuth} from './AuthContext';
+import styles from './styles';
 
 export default function Profile(){
     const [userInfo, setUserInfo] = useState({alias: "", firstname: "", lastname: "", age: "", weight: "", height: "", sex: ""});
@@ -31,22 +32,46 @@ export default function Profile(){
     // Lot of messy formatting because I was too lazy to put each thing in a list or individual text things
     // Probably will fix later for styling but that's not a job for tonight
     return(
-        <View>
-            <Text>
-                {"\n"}{userInfo.alias}'s Profile 
+        <View style={{backgroundColor: "#5C9EAD", width: 250, margin: 15, padding: 10, borderRadius:15}}>
+            <Text style={{fontSize:20, fontWeight:'bold', color:'#124263', textAlign:'center'}}>
+                {userInfo.alias}'s Profile 
             </Text>
-            <View>
-                <Text>
-                    First name:     {userInfo.firstname}{"\n"}
-                    Last name:      {userInfo.lastname}{"\n"}
-                    Age:            {userInfo.age}{"\n"}
-                    Weight (lbs):   {Math.round(userInfo.weight*2.204)}{"\n"}
-                    Height:         {`${Math.floor(userInfo.height/12)}' ${userInfo.height%12}"`}{"\n"}
-                    Sex:            {userInfo.sex}{"\n"}
-                </Text>
+            <View
+            style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 4,
+                marginLeft: 10,
+                marginRight: 10
+            }}
+            />
+            <View >
+                <View style={styles.profileRow}>
+                    <Text style={styles.profileTextLeft}>First name:</Text><Text style={styles.profileTextRight}>{userInfo.firstname}</Text>
+                </View>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 1, marginLeft: 10, marginRight: 10}}/>
+                <View style={styles.profileRow}>
+                    <Text style={styles.profileTextLeft}>Last name:</Text><Text style={styles.profileTextRight}>{userInfo.lastname}</Text>
+                </View>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 1, marginLeft: 10, marginRight: 10}}/>
+                <View style={styles.profileRow}>
+                    <Text style={styles.profileTextLeft}>Age:</Text><Text style={styles.profileTextRight}>{userInfo.age}</Text>
+                </View>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 1, marginLeft: 10, marginRight: 10}}/>
+                <View style={styles.profileRow}>
+                    <Text style={styles.profileTextLeft}>Weight:</Text><Text style={styles.profileTextRight}>{Math.round(userInfo.weight*2.204*10)/10}</Text>
+                </View>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 1, marginLeft: 10, marginRight: 10}}/>
+                <View style={styles.profileRow}>
+                    <Text style={styles.profileTextLeft}>Height:</Text><Text style={styles.profileTextRight}>{`${Math.floor(userInfo.height/12)}' ${userInfo.height%12}"`}</Text>
+                </View>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 1, marginLeft: 10, marginRight: 10}}/>
+                <View style={styles.profileRow}>
+                    <Text style={styles.profileTextLeft}>Sex:</Text><Text style={styles.profileTextRight}>{userInfo.sex}</Text>
+                </View>
+                <View style={{borderBottomColor: 'black', borderBottomWidth: 1, marginLeft: 10, marginRight: 10}}/>
                 {editProfile && (
                     <Link to={'../edit_profile'}>
-                        <Text>
+                        <Text style={styles.profileLink}>
                             Edit Profile
                         </Text>
                     </Link>
@@ -54,7 +79,7 @@ export default function Profile(){
 
                 {editProfile && (
                     <Link to={'../delete_profile'}>
-                        <Text>
+                        <Text style={styles.profileLink}>
                             Delete Profile
                         </Text>    
                     </Link>
