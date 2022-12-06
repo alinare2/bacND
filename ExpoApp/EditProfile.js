@@ -27,7 +27,7 @@ export default function EditProfile(){
         Axios.post(`http://db8.cse.nd.edu/cse30246/bacND/server/postEditUser.php`, payload)
         .then((response) =>{ 
             // DO something with the response
-            nav(`../profile/${currentUser}`)
+            nav(`../profile/${currentUser}`);
 
         })
         .catch((error) =>{
@@ -57,34 +57,43 @@ export default function EditProfile(){
             <Text>
                 {userInfo.alias + "'s account details"}
             </Text>
+            <Text> First Name</Text>
             <TextInput
                 defaultValue={userInfo.firstname}
                 onChangeText={text => setUserInfo({...userInfo, 'firstname': text})}
             />
+            <Text> Last Name </Text>
             <TextInput
                 defaultValue={userInfo.lastname}
                 onChangeText={text => setUserInfo({...userInfo, 'lastname': text})}
             />
+            <Text> Age </Text>
             <TextInput 
                 defaultValue={userInfo.age.toString()}
                 onChangeText={text => setUserInfo({...userInfo, 'age': text})}
                 keyboardType='numeric'
             />
+
+            <Text> Height (ft) </Text>
             <TextInput 
                 defaultValue={userInfo.feet.toString()}
                 onChangeText={text => setUserInfo({...userInfo, 'feet': text})}    
                 keyboardType='numeric'
             />
+            <Text> Height (inch)</Text>
             <TextInput 
                 defaultValue={userInfo.inch.toString()}
                 onChangeText={text => setUserInfo({...userInfo, 'inch': text})}    
                 keyboardType='numeric'
             />
+            <Text> Weight (lbs) </Text>
             <TextInput 
                 defaultValue={userInfo.weight.toString()}
                 onChangeText={text => setUserInfo({...userInfo, 'weight': text})}
                 keyboardType='numeric'
             />
+
+            <Text> Sex </Text>
             <Text> Sex</Text>
             <Button title="Submit" onPress={handleSubmit}/> 
         </View>

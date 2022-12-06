@@ -79,6 +79,14 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         paddingRight: 2
     
+    },
+
+
+    formInput: {
+        fontSize:20, 
+        backgroundColor:'white', 
+        padding:5, 
+        margin: 10
     }
 
 

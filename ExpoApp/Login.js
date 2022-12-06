@@ -4,6 +4,7 @@ import { TextInput, View, Text, Button} from 'react-native';
 import { useNavigate } from 'react-router-native';
 
 import { useAuth } from './AuthContext';
+import styles from './styles';
 
 export default function Login(){
     const {setCurrentUser, setIsLoggedIn} = useAuth();
@@ -41,10 +42,12 @@ export default function Login(){
 
     return(
         <>
-            <View style={{backgroundColor: '#EEEEEE'}} >
-                <TextInput onChangeText={text => setUsername(text)} value={username} placeholder="Username"/>
-                <TextInput onChangeText={text => setPassword(text)} value={password} placeholder="Password" secureTextEntry={true}/>
-                <Button onPress={handleOnPress} title="Log In"/>
+            <View style={{backgroundColor: '#EEEEEE', padding:0, margin: 20, width:300}} >
+                <View style={{backgroundColor:'#DDDDDD'}}>
+                    <TextInput autoCapitalize='none' style={styles.formInput} onChangeText={text => setUsername(text)} value={username} placeholder="Username"/>
+                    <TextInput style={styles.formInput} onChangeText={text => setPassword(text)} value={password} placeholder="Password" secureTextEntry={true}/>
+                </View>
+                <Button style={{fontSize:30}} onPress={handleOnPress} title="Log In"/>
             </View>
         </>
     );
