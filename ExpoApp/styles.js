@@ -40,6 +40,24 @@ const styles = StyleSheet.create({
     navText: {
         fontSize: 30,
         paddingTop: 1
+    },
+
+    bigText: {fontSize: 40,
+              fontWeight: "bold", 
+              color: 'white',
+              alignSelf: 'center', 
+              backgroundColor: '#5C9EAD',
+              borderRadius: 7,
+              borderWidth: 5,
+              borderColor: '#fff'
+            },
+
+    bacLevels: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        fontColor: 'white',
+        paddingLeft: 10,
+        paddingRight: 10
     }
 
 
