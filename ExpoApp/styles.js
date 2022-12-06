@@ -44,10 +44,13 @@ const styles = StyleSheet.create({
     },
 
     formInput: {
-        fontSize:20, 
+        fontSize:14, 
         backgroundColor:'white', 
         padding:5, 
-        margin: 10
+        marginRight: 50,
+        marginLeft: 50,
+        marginTop: 5,
+        marginBottom: 5
     },
 
 
