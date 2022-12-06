@@ -51,6 +51,14 @@ export default function Profile(){
                         </Text>
                     </Link>
                 )}
+
+                {editProfile && (
+                    <Link to={'../delete_profile'}>
+                        <Text>
+                            Delete Profile
+                        </Text>    
+                    </Link>
+                )}
             </View>
         </View>
     )

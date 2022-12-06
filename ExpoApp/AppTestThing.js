@@ -11,6 +11,8 @@ import Signup from './Signup';
 import HomeWrapper from './HomeWrapper';
 import Home from './Home';
 import Profile from './Profile';
+import EditProfile from './EditProfile';
+import DeleteProfile from './DeleteProfile'
 import Consume from './Consume'; 
 import FriendsList from './FriendsList';
 import Logout from './Logout';
@@ -18,7 +20,7 @@ import Logout from './Logout';
 import {useAuth} from './AuthContext';
 
 import styles from './styles';
-import EditProfile from './EditProfile';
+;
 
 export default function AppTestThing(){
     const {isLoggedIn, currentUser} = useAuth();
@@ -40,6 +42,7 @@ export default function AppTestThing(){
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/profile/:user_id" element={<Profile/>}/>
                 <Route path="/edit_profile" element={<EditProfile/>}/>
+                <Route path="/delete_profile" element={<DeleteProfile/>}/>
                 <Route path="/consume" element={<Consume/>}/>
                 <Route path="/friends" element={<FriendsList/>}/>
                 <Route path="/logout" element={<Logout/>}/>
