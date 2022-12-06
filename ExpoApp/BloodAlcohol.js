@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text} from 'react-native';
 import Axios from 'axios';
+import { Linking } from 'react-native';
 
 import {useAuth} from './AuthContext';
 import styles from './styles';
@@ -39,6 +40,7 @@ export default function BloodAlcohol(){
             <View style={{marginLeft:6, marginRight:6, borderStyle:'solid', borderColor:'#AAAAAA', borderWidth:4, padding:4, borderTopWidth:0}}>
                 <Text style={(bac > 0.08 && bac <= 0.15) ? {...styles.bacLevels, color:'#DD0000'} : styles.bacLevels}>0.08% - 0.15%</Text>
                 <Text style={styles.subtext}>At legal limit! Proceed with caution as effects become more apparent and mood starts to swing</Text>
+                <Text style={{color: 'blue',textDecorationLine: 'underline',alignSelf: 'center'}} onPress={() => Linking.openURL('https://www.uber.com/us/en/ride/')}> Urge to drive? Call an Uber instead! </Text>
             </View>
             <View style={{marginLeft:6, marginRight:6, borderStyle:'solid', borderColor:'#AAAAAA', borderWidth:4, padding:4, borderTopWidth:0}}>
                 <Text style={(bac > 0.15 && bac <= 0.30) ? {...styles.bacLevels, color:'#DD0000'} : styles.bacLevels}>0.15% - 0.30%</Text>
