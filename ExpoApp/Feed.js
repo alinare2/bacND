@@ -28,7 +28,7 @@ export default function Feed(){
             <FlatList
                 data={consumes}
                 renderItem={({item}) =>(
-                    <Text>You had a {item.container} of {item.product_name} at {item.time}</Text>
+                    <Text>{item.user === currentUser ? "You" : item.alias} had a {item.container} of {item.product_name} at {item.time}</Text>
                 )}
                 keyExtractor={(item) => {return item.consumes_id}}
                 style={{flexGrow:0}}
