@@ -53,6 +53,7 @@ export default function Signup(){
                     style={styles.formInput}
                     placeholder="Username" 
                     onChangeText={text => setAccountDetails({...accountDetails, alias: text})} 
+                    autoCapitalize='none'
                     value={accountDetails.alias}
                 />
                 <TextInput 

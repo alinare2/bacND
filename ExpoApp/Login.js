@@ -44,7 +44,7 @@ export default function Login(){
         <>
             <View style={{backgroundColor: '#EEEEEE', padding:0, margin: 20, width:300}} >
                 <View style={{backgroundColor:'#DDDDDD'}}>
-                    <TextInput style={styles.formInput} onChangeText={text => setUsername(text)} value={username} placeholder="Username"/>
+                    <TextInput autoCapitalize='none' style={styles.formInput} onChangeText={text => setUsername(text)} value={username} placeholder="Username"/>
                     <TextInput style={styles.formInput} onChangeText={text => setPassword(text)} value={password} placeholder="Password" secureTextEntry={true}/>
                 </View>
                 <Button style={{fontSize:30}} onPress={handleOnPress} title="Log In"/>
