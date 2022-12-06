@@ -4,16 +4,17 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
    
     container: {
-        backgroundColor: '#fff',
+        backgroundColor: '#326273',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     }, 
     navbarContainer: {
         padding: 10,
-        paddingTop: 40, 
+        paddingTop: 10, 
+        marginTop:10,
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        backgroundColor: 'aliceblue'
+        backgroundColor: '#5C9EAD'
     },
 
     navbarLink: {
@@ -27,10 +28,19 @@ const styles = StyleSheet.create({
     },
 
     drinkSearch: {
-        width: '80%',
-        backgroundColor:'#f0f0f0'
-    }
+        width: '90%',
+        backgroundColor:'#326273'
+    },
 
+    bigLogo: {
+        height: 100,
+        width: 'auto',
+    },
+    
+    navText: {
+        fontSize: 30,
+        paddingTop: 1
+    }
 
 
 });

@@ -46,7 +46,7 @@ export default function Signup(){
 
 
     return(
-        <View>
+        <View style={{backgroundColor: '#EEEEEE'}} >
             <TextInput 
                 placeholder="Username" 
                 onChangeText={text => setAccountDetails({...accountDetails, alias: text})} 
@@ -98,7 +98,12 @@ export default function Signup(){
                 value={accountDetails.weight} 
                 keyboardType="numeric"
             />
-            <Text> Find somethign for a radio button for sex</Text> 
+            {/* <Text> Find somethign for a radio button for sex</Text> */}
+            <TextInput 
+                placeholder='Gender (M/F)' 
+                onChangeText={text=>setAccountDetails({...accountDetails, sex: text})} 
+                value={accountDetails.sex} 
+            /> 
             <Button 
                 title="Sign up!" 
                 onPress={handleOnPress}
